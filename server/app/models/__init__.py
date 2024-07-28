@@ -1,1 +1,1 @@
-from .models import Session, Message
+from .models import Session, Message, Base

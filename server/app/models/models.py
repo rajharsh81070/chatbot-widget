@@ -12,8 +12,7 @@ class Session(Base):
     __tablename__ = "sessions"
 
     id = Column(String(36), primary_key=True, index=True)
-    created_at = Column(DateTime, default=datetime.utcnow)
-    last_activity = Column(DateTime, default=datetime.utcnow)
+    created_at = Column(DateTime, default=datetime.now)
     expires_at = Column(DateTime)
 
     messages = relationship("Message", back_populates="session")
@@ -28,7 +27,7 @@ class Message(Base):
     session_id = Column(String(36), ForeignKey("sessions.id"), nullable=False)
     content = Column(Text, nullable=False)
     is_from_user = Column(Boolean, nullable=False)
-    created_at = Column(DateTime, default=datetime.utcnow)
-    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+    created_at = Column(DateTime, default=datetime.now)
+    updated_at = Column(DateTime, default=datetime.now, onupdate=datetime.now)
 
     session = relationship("Session", back_populates="messages")

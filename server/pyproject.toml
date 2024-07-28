@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "server"
+name = "chatbot-widget-server"
 version = "0.1.0"
-description = ""
+description = "A chatbot widget backend using FastAPI"
 authors = ["rajharsh81070 <rajharsh81070@gmail.com>"]
 readme = "README.md"
 
