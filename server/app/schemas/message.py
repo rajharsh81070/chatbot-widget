@@ -2,11 +2,13 @@ from pydantic import BaseModel
 from datetime import datetime
 import uuid
 
+
 class MessageCreate(BaseModel):
     """
     Schema for creating a new message.
     """
     content: str
+
 
 class MessageResponse(BaseModel):
     """
@@ -21,3 +23,4 @@ class MessageResponse(BaseModel):
 
     class Config:
         orm_mode = True
+        from_attributes = True
