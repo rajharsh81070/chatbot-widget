@@ -9,7 +9,7 @@ import uuid
 
 
 async def session_validator(request: Request, call_next):
-    if request.url.path == "/chat/start_session":
+    if request.url.path == "/api/v1/chat/start_session":
         return await call_next(request)
 
     session_id = request.cookies.get("session_id")
