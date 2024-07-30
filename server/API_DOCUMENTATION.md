@@ -17,9 +17,9 @@
   }
   ```
 
-### Send Message
+### Create Message
 
-- **URL:** `/api/v1/chat/send_message`
+- **URL:** `/api/v1/chat/create_message`
 - **Method:** `POST`
 - **Headers:** 
   - Cookie: `session_id=uuid-string`

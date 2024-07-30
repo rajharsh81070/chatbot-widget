@@ -10,7 +10,7 @@ def test_start_session():
     assert "session_id" in response.json()["data"]
 
 
-def test_send_message():
+def test_create_message():
     session_response = client.post("/api/v1/chat/start_session")
     session_id = session_response.json()["data"]["session_id"]
 

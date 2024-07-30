@@ -9,6 +9,10 @@ import uuid
 
 
 async def session_validator(request: Request, call_next):
+    # Allow OPTIONS requests to pass through for CORS preflight
+    if request.method == "OPTIONS":
+        return await call_next(request)
+
     if request.url.path == "/api/v1/chat/start_session":
         return await call_next(request)
 

@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from dotenv import load_dotenv
 from fastapi.exceptions import RequestValidationError
+from fastapi.middleware.cors import CORSMiddleware
 from .core import session_validator, Base
 from .routes import chat_router
 from .core import engine
@@ -10,6 +11,16 @@ from .core import ChatbotException, chatbot_exception_handler, validation_except
 load_dotenv()
 
 app = FastAPI(title="Chat Widget Backend")
+
+origins = ["http://localhost:5173"]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 app.add_exception_handler(ChatbotException, chatbot_exception_handler)
 app.add_exception_handler(RequestValidationError, validation_exception_handler)
