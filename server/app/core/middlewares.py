@@ -9,7 +9,6 @@ import uuid
 
 
 async def session_validator(request: Request, call_next):
-    # Allow OPTIONS requests to pass through for CORS preflight
     if request.method == "OPTIONS":
         return await call_next(request)
 
