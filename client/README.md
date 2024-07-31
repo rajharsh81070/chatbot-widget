@@ -92,3 +92,19 @@ src/
 - `services/`: Contains API service functions
 - `types/`: Contains TypeScript type definitions
 - `constants/`: Contains constant values used across the application
+
+## Docker
+
+To build and run the application using Docker:
+
+1. Build the Docker image:
+   ```
+   docker build -t chat-widget-frontend .
+   ```
+
+2. Run the container:
+   ```
+   docker run -p 5173:5173 chat-widget-frontend
+   ```
+
+The application will be available at `http://localhost:5173`.
