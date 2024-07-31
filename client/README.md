@@ -1,30 +1,94 @@
-# React + TypeScript + Vite
+# Chat Widget Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Table of Contents
 
-Currently, two official plugins are available:
+- [Chat Widget Frontend](#chat-widget-frontend)
+  - [Table of Contents](#table-of-contents)
+  - [Tech Stack](#tech-stack)
+  - [Getting Started](#getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Installation](#installation)
+  - [Running the Application](#running-the-application)
+  - [Building for Production](#building-for-production)
+  - [Running Tests](#running-tests)
+  - [Project Structure](#project-structure)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
 
-## Expanding the ESLint configuration
+- React 18+
+- TypeScript
+- Vite (for build tooling)
+- Tailwind CSS
+- Axios (for API requests)
+- Headless UI (for accessible UI components)
+- Hero Icons
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Getting Started
 
-- Configure the top-level `parserOptions` property like this:
+### Prerequisites
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.app.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+- Node.js 14.0 or higher
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+   ```
+   git clone https://github.com/rajharsh81070/chatbot-widget.git
+   cd chatbot-widget/client
+   ```
+
+2. Install dependencies:
+   ```
+   npm install
+   # or
+   yarn install
+   ```
+
+## Running the Application
+
+To run the application in development mode:
+
+```
+npm run dev
+# or
+yarn dev
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+The application will be available at `http://localhost:5173`.
+
+## Building for Production
+
+To build the application for production:
+
+```
+npm run build
+# or
+yarn build
+```
+
+The built files will be in the `dist` directory.
+
+
+## Project Structure
+
+```
+src/
+├── components/
+│   ├── ChatInterface.tsx
+│   ├── Ava.tsx
+│   ├── ActionButton.tsx
+│   ├── InputArea.tsx
+│   └── ChatMessage.tsx
+├── services/
+│   └── api.ts
+├── types.ts
+├── constant.ts
+├── App.tsx
+└── main.tsx
+```
+
+- `components/`: Contains all React components
+- `services/`: Contains API service functions
+- `types/`: Contains TypeScript type definitions
+- `constants/`: Contains constant values used across the application
