@@ -43,12 +43,15 @@ def create_message(db: Session, session_id: uuid.UUID, content: str) -> List[Mes
     if not content.strip():
         raise InvalidInputException("Message content cannot be empty")
 
+    previous_messages = db.query(Message).filter(
+        Message.session_id == session_id).order_by(Message.created_at.desc()).limit(5).all()
+    previous_messages.reverse()
     user_message = Message(session_id=session_id,
                            content=content, is_from_user=True)
     print(f"User message: {user_message.__repr__()}")
     db.add(user_message)
 
-    bot_response = generate_response(content)
+    bot_response = generate_response(content, previous_messages)
     print(f"Bot response: {bot_response}")
     bot_message = Message(session_id=session_id,
                           content=bot_response, is_from_user=False)
