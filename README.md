@@ -1,5 +1,7 @@
 # Chat Widget Project
 
+<img src="./demo.png" alt="demo" width="70%" /> <img src="./mobile_demo.png" alt="mobile-demo" width="20%" />
+
 ## Table of Contents
 
 - [Chat Widget Project](#chat-widget-project)
